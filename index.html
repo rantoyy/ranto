@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SannFM Official</title>
+
+<!-- ICON (Remix Icon) -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+/* ===== RESET & BODY ===== */
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial,sans-serif;
+}
+
+/* ===== CONTAINER UTAMA ===== */
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:16px;
+}
+
+/* ===== HEADER (THUMBNAIL + PROFIL) ===== */
+.header{
+  position:relative;
+  text-align:center;
+  margin-bottom:25px;
+}
+.header img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+/* ===== PROFIL (TIMPA THUMBNAIL) ===== */
+.profile{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.profile img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:4px solid #000;
+}
+.profile-name{
+  margin-top:10px;
+  font-size:26px;
+  font-weight:bold;
+}
+
+/* ===== BUTTON LINK ===== */
+.link-btn{
+  background:#fff;
+  color:#000;
+  padding:16px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  margin-bottom:14px;
+  font-weight:bold;
+}
+.link-btn i{
+  font-size:22px;
+}
+
+/* ===== SLIDER ADMIN ===== */
+.slider{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding-bottom:10px;
+}
+.slider::-webkit-scrollbar{
+  display:none;
+}
+
+/* CARD ADMIN */
+.admin-card{
+  min-width:240px;
+  height:300px;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  background:#111;
+}
+.admin-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* STATUS ADMIN */
+.admin-status{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:rgba(0,0,0,.6);
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:12px;
+}
+
+/* NAMA ADMIN */
+.admin-name{
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  background:rgba(0,0,0,.6);
+  padding:6px 12px;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+/* ===== CHAT BOT ===== */
+.chat-box{
+  background:#111;
+  border-radius:18px;
+  padding:14px;
+  margin-top:24px;
+}
+
+/* PESAN CHAT */
+.chat-msg{
+  background:#222;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:10px;
+  white-space:pre-line;
+}
+
+/* TOMBOL SALIN */
+.copy-btn{
+  background:#0affe2;
+  color:#000;
+  border:none;
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-bottom:12px;
+}
+
+/* TOMBOL PILIHAN CHAT */
+.chat-btns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.chat-btns button{
+  background:#1e1e1e;
+  color:#fff;
+  border:none;
+  padding:12px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+/* ===== POPUP SALIN ===== */
+.popup{
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#111;
+  color:#fff;
+  padding:10px 16px;
+  border-radius:14px;
+  font-size:13px;
+  opacity:0;
+  transition:.3s;
+  pointer-events:none;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  text-align:center;
+  font-size:12px;
+  opacity:.6;
+  margin:28px 0 10px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+  <!-- Gambar thumbnail -->
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
+  <!-- Profil -->
+  <div class="profile">
+    <img src="https://telegra.ph/file/98cdd1c7cd35cc5735a86.jpg">
+    <div class="profile-name">RANTO SANS</div>
+  </div>
+</div>
+
+<!-- ===== LINK ===== -->
+<a href="https://whatsapp.com/channel/xxxxxxxxxx" target="_blank" class="link-btn">
+  <i class="ri-broadcast-line"></i> Saluran WhatsApp
+</a>
+
+<a href="https://chat.whatsapp.com/xxxxxxxxxx" target="_blank" class="link-btn">
+  <i class="ri-group-line"></i> Grup WhatsApp
+</a>
+
+<a href="https://wa.me/6281234567890" target="_blank" class="link-btn">
+  <i class="ri-user-3-line"></i> Owner
+</a>
+
+<a href="https://wa.me/6288200621489" target="_blank" class="link-btn">
+  <i class="ri-customer-service-2-line"></i> Support
+</a>
+
+<!-- ===== ADMIN (4 ORANG) ===== -->
+<div class="slider">
+
+  <div class="admin-card">
+    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
+    <div class="admin-status">🟢 Admin Aktif</div>
+    <div class="admin-name">Admin 1</div>
+  </div>
+
+  <div class="admin-card">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+    <div class="admin-status">🟢 Admin Aktif</div>
+    <div class="admin-name">Admin 2</div>
+  </div>
+
+  <div class="admin-card">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d">
+    <div class="admin-status">🟢 Admin Aktif</div>
+    <div class="admin-name">Admin 3</div>
+  </div>
+
+  <div class="admin-card">
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
+    <div class="admin-status">🟢 Admin Aktif</div>
+    <div class="admin-name">Admin 4</div>
+  </div>
+
+</div>
+
+<!-- ===== CHAT BOT ===== -->
+<div class="chat-box">
+
+  <!-- Pesan -->
+  <div id="chat" class="chat-msg">
+Halo 👋  
+Pilih topik di bawah ini.
+  </div>
+
+  <!-- Tombol salin -->
+  <button class="copy-btn" onclick="copyChat()">📋 Salin</button>
+
+  <!-- Tombol pilihan -->
+  <div class="chat-btns">
+    <button onclick="reply(1)">Info Saluran</button>
+    <button onclick="reply(2)">Konfirmasi</button>
+    <button onclick="reply(3)">Pembayaran</button>
+    <button onclick="reply(4)">Admin</button>
+  </div>
+</div>
+
+<div class="footer">
+  © 2025 SannFM • All Rights Reserved
+</div>
+
+</div>
+
+<!-- ===== DATA YANG DISALIN (TERSEMBUNYI) ===== -->
+<div id="copyData" style="display:none"></div>
+
+<!-- ===== POPUP ===== -->
+<div id="popup" class="popup">Disalin</div>
+
+<script>
+// ===== RESPON CHAT =====
+function reply(x){
+  const chat = document.getElementById("chat");
+  const copyData = document.getElementById("copyData");
+
+  if(x==1){
+    chat.innerText =
+`Salin link saluran resmi di bawah ini
+https://whatsapp.com/channel/xxxxxxxxxx`;
+    copyData.innerText = "https://whatsapp.com/channel/xxxxxxxxxx";
+  }
+
+  if(x==2){
+    chat.innerText =
+`Salin teks ini dan kirim ke WhatsApp
+Saya sudah melakukan pembayaran.`;
+    copyData.innerText = "Saya sudah melakukan pembayaran.";
+  }
+
+  if(x==3){
+    chat.innerText =
+`Gunakan link pembayaran berikut
+https://payment.example.com`;
+    copyData.innerText = "https://payment.example.com";
+  }
+
+  if(x==4){
+    chat.innerText =
+`Hubungi Admin melalui link berikut
+https://wa.me/6288200621489`;
+    copyData.innerText = "https://wa.me/6288200621489";
+  }
+}
+
+// ===== FUNGSI SALIN =====
+function copyChat(){
+  const text = document.getElementById("copyData").innerText;
+  if(!text) return;
+
+  navigator.clipboard.writeText(text);
+
+  const popup = document.getElementById("popup");
+  popup.innerText = "Berhasil disalin";
+  popup.style.opacity = "1";
+
+  setTimeout(()=>{
+    popup.style.opacity = "0";
+  },1500);
+}
+</script>
+
+</body>
+</html>
